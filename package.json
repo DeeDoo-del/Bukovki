@@ -1,0 +1,39 @@
+{
+  "name": "bukovki",
+  "version": "1.0.0",
+  "description": "Проект Bukovki является гибридом Notion + Git для знаний. По сути это Block-based Zettelkasten с историей версий на уровне блоков",
+  "homepage": "https://github.com/DeeDoo-del/Bukovki#readme",
+  "bugs": {
+    "url": "https://github.com/DeeDoo-del/Bukovki/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DeeDoo-del/Bukovki.git"
+  },
+  "license": "ISC",
+  "author": "DeeDoo",
+  "type": "commonjs",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "electron": "^39.2.7",
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^25.0.3",
+    "electron-builder": "^26.0.12"
+  },
+  "dependencies": {
+    "@blocknote/core": "^0.45.0",
+    "@blocknote/react": "^0.45.0",
+    "better-sqlite3": "^12.5.0",
+    "cytoscape": "^3.33.1",
+    "hypercore": "^11.21.6",
+    "hyperswarm": "^4.16.0",
+    "mermaid": "^11.12.2",
+    "y-indexeddb": "^9.0.12",
+    "yjs": "^13.6.29",
+    "zustand": "^5.0.9"
+  }
+}
