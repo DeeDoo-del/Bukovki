@@ -1,8 +1,8 @@
-// Файл для теста прелоад скрипта
-    const titleInput = document.getElementById("title")
-    const setBtn = document.getElementById("btn")
+const input = document.getElementById("input")
+const btn = document.getElementById("btn")
 
-    setBtn.addEventListener("click", () => {
-        const title = titleInput.value
-        window.ElectronAPI.setTitle(title)
-    })
+btn.addEventListener("click", () =>{
+    inputValue = input.value
+    window.TestAPI.createFile(inputValue)
+    }
+)

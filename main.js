@@ -1,24 +1,27 @@
 const { app, BrowserWindow, ipcMain} = require('electron/main');
 const path = require('node:path')
+const fs = require('node:fs');
 
-function handleSetTitle(event, title){
-    const webContent = event.sender
-    const win = BrowserWindow.fromWebContent(webContent)
-    console.log(win)
-    win.setTitle(title)
+function handlecreateFile(event, fileName){
+   const content = "Ура, сработало!"
+   fs.writeFile('D:\Bukovki\src', content, err => {
+        if (err) {
+            console.error(err);
+        } else {
+            console.error("file written successfully");
+        }
+    });
 }
 
 const createWindow = () => {
-    const mainWindow = new BrowserWindow({
-     width: 800,
-     height: 600,
-     webPreferences: {
+const win = new BrowserWindow({
+    webPreferences: {
         preload: path.join(__dirname, 'preload.js')
-     }   
-    })
-    mainWindow.loadFile('index.html')
+    }
+})
+    win.loadFile('index.html')
 }
-app.whenReady().then(() =>{
-    ipcMain.on('set-title', handleSetTitle)
+
+app.whenReady.then(() => {
     createWindow();
 })

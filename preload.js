@@ -1,5 +1,5 @@
-const { contextBridge, ipcRender } = require("electron");
+const {ipcRenderer, contextBridge} = require('electron/renderer');
 
- contextBridge.exposeInMainWorld('electronAPI',  {
-  setTitle: (title) => ipcRender.send("set-title", title)
-}) 
+contextBridge.exposeInMainWorld( "TestAPI",  {
+  createFile: (fileName) => ipcRenderer.send("filesys:CreateFile", fileCreate)
+})
